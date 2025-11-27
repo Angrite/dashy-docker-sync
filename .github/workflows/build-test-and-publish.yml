@@ -87,6 +87,8 @@ jobs:
             ${{ steps.meta.outputs.annotations }}
             org.opencontainers.image.description=Dashy Docker Sync Image
           outputs: type=image,name=target,annotations.index:org.opencontainers.image.description=Dashy Docker Sync Image
+          provenance: false # Disable provenance to avoid unknown/unknown
+          sbom: false       # Disable sbom to avoid unknown/unknown          
 
       - name: Sign Docker image
         if: github.event_name != 'pull_request'
